@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="sqoop-1.4.6-cdh5.8.31">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../file/ETL/sqoop-1.4.6-cdh5.8.3.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

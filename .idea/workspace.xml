@@ -1,0 +1,918 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="webreport:jar" />
+    </artifacts-to-build>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="3f3cc7a8-a2f1-4ca0-8e95-6352a71bf0f3" name="Default Changelist" comment="" />
+    <ignored path="$PROJECT_DIR$/out/" />
+    <ignored path="$PROJECT_DIR$/target/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/webreport$SparkTest.ic" NAME="SparkTest Coverage Results" MODIFIED="1553596880423" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>webreport.*</FILTER>
+    </SUITE>
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/scala/webreport/Kafka2Hive.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="404">
+              <caret line="39" column="42" lean-forward="true" selection-start-line="39" selection-start-column="42" selection-end-line="39" selection-end-column="42" />
+              <folding>
+                <element signature="e#21#66#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Scala Worksheet" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>leve</find>
+      <find>names</find>
+      <find>nameservice1</find>
+      <find>80</find>
+    </findStrings>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/test/scala/webreport/Test.scala" />
+        <option value="$PROJECT_DIR$/src/test/scala/webreport/WordCount.scala" />
+        <option value="$PROJECT_DIR$/src/test/scala/webreport/ScalaWorksheet.sc" />
+        <option value="$PROJECT_DIR$/src/test/scala/webreport/wordcount.txt" />
+        <option value="$PROJECT_DIR$/src/main/scala/webreport/SparkSqlTest.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/resources/data2.txt" />
+        <option value="$PROJECT_DIR$/src/main/scala/resources/data.csv" />
+        <option value="$PROJECT_DIR$/target/classes/data.txt" />
+        <option value="$PROJECT_DIR$/src/main/scala/resources/data.json" />
+        <option value="$PROJECT_DIR$/src/test/scala/webreport/MlibTest.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/resources/data.txt" />
+        <option value="$PROJECT_DIR$/src/main/scala/webreport/HelloWorld.scala" />
+        <option value="$PROJECT_DIR$/src/test/scala/webreport/Person.java" />
+        <option value="$PROJECT_DIR$/src/test/scala/webreport/test.java" />
+        <option value="$PROJECT_DIR$/src/test/scala/webreport/ScalaTest.scala" />
+        <option value="$PROJECT_DIR$/src/test/scala/webreport/SparkTest.scala" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/scala/webreport/MyRegistrato.java" />
+        <option value="$PROJECT_DIR$/src/main/scala/webreport/MyRegistrator.scala" />
+        <option value="$PROJECT_DIR$/src/test/scala/webreport/Spark1Test.scala" />
+        <option value="$PROJECT_DIR$/src/test/scala/webreport/Spark2Test.scala" />
+        <option value="$PROJECT_DIR$/src/test/scala/webreport/Spark2Oracle.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/webreport/HiveTest.scala" />
+        <option value="$PROJECT_DIR$/src/test/scala/webreport/JavaTest.java" />
+        <option value="$PROJECT_DIR$/src/main/scala/webreport/Kafka2Hive.scala" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="C:\web\repo" />
+        <option name="mavenHome" value="C:/web/apache-maven-3.6.0" />
+        <option name="userSettingsFile" value="C:\web\apache-maven-3.6.0\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="22" />
+    <option name="y" value="81" />
+    <option name="width" value="1400" />
+    <option name="height" value="784" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="webreport" type="b2602c69:ProjectViewProjectNode" />
+              <item name="webreport" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="webreport" type="b2602c69:ProjectViewProjectNode" />
+              <item name="webreport" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="webreport" type="b2602c69:ProjectViewProjectNode" />
+              <item name="webreport" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="artifacts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="webreport" type="b2602c69:ProjectViewProjectNode" />
+              <item name="webreport" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="artifacts" type="462c0819:PsiDirectoryNode" />
+              <item name="webreport_jar" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="webreport" type="b2602c69:ProjectViewProjectNode" />
+              <item name="webreport" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="webreport" type="b2602c69:ProjectViewProjectNode" />
+              <item name="webreport" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="webreport" type="b2602c69:ProjectViewProjectNode" />
+              <item name="webreport" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="webreport" type="b2602c69:ProjectViewProjectNode" />
+              <item name="webreport" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="scala" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="webreport" type="b2602c69:ProjectViewProjectNode" />
+              <item name="webreport" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="scala" type="462c0819:PsiDirectoryNode" />
+              <item name="webreport" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="webreport" type="b2602c69:ProjectViewProjectNode" />
+              <item name="webreport" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="webreport" type="b2602c69:ProjectViewProjectNode" />
+              <item name="webreport" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="scala" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="webreport" type="b2602c69:ProjectViewProjectNode" />
+              <item name="webreport" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="scala" type="462c0819:PsiDirectoryNode" />
+              <item name="webreport" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558611525790" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="H:\BDP\scala\webreport\src\main\resources" />
+      <recent name="H:\BDP\scala\webreport\src\main\scala\webreport\resource" />
+      <recent name="H:\BDP\scala\webreport\src\main\scala\resources" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="webreport" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="H:\BDP\scala\webreport\src\main\scala\resources" />
+      <recent name="H:\BDP\scala\webreport\src\main\scala\webreport\resources" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.Kafka2Hive">
+    <configuration name="HiveTest" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="webreport.HiveTest" />
+      <module name="webreport" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="webreport.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JavaTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="webreport.JavaTest" />
+      <module name="webreport" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="webreport.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Kafka2Hive" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="webreport.Kafka2Hive" />
+      <module name="webreport" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="webreport.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Spark2Test" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="webreport.Spark2Oracle" />
+      <module name="webreport" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="webreport.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SparkTest" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="webreport.Spark1Test" />
+      <module name="webreport" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="webreport.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Kafka2Hive" />
+        <item itemvalue="Application.JavaTest" />
+        <item itemvalue="Application.HiveTest" />
+        <item itemvalue="Application.Spark2Test" />
+        <item itemvalue="Application.SparkTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SbtLocalSettings">
+    <option name="projectSyncType">
+      <map>
+        <entry key="$PROJECT_DIR$/../KanBan" value="PREVIEW" />
+        <entry key="H:/SVN/MBDS_KANBAN/KanBan" value="PREVIEW" />
+      </map>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration useDefault="false">\\B9NASOA3\oa3-oa-userdata\AppData\10060578C\AppData\Roaming\Subversion</configuration>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3f3cc7a8-a2f1-4ca0-8e95-6352a71bf0f3" name="Default Changelist" comment="" />
+      <created>1551788002983</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1551788002983</updated>
+      <workItem from="1551788004602" duration="2398000" />
+      <workItem from="1551833960008" duration="310000" />
+      <workItem from="1551864093083" duration="6062000" />
+      <workItem from="1551919393900" duration="6872000" />
+      <workItem from="1551955102364" duration="1346000" />
+      <workItem from="1552008862826" duration="71000" />
+      <workItem from="1552018341793" duration="249000" />
+      <workItem from="1552271379602" duration="2949000" />
+      <workItem from="1552352920863" duration="16553000" />
+      <workItem from="1552438792464" duration="10362000" />
+      <workItem from="1552526812645" duration="4008000" />
+      <workItem from="1552545750229" duration="7566000" />
+      <workItem from="1552612093968" duration="9305000" />
+      <workItem from="1552899922523" duration="961000" />
+      <workItem from="1552964810355" duration="14936000" />
+      <workItem from="1553042376060" duration="11733000" />
+      <workItem from="1553497238069" duration="2188000" />
+      <workItem from="1553560925204" duration="65000" />
+      <workItem from="1553587957784" duration="11427000" />
+      <workItem from="1553648223275" duration="23375000" />
+      <workItem from="1553734933488" duration="1197000" />
+      <workItem from="1553821207574" duration="5001000" />
+      <workItem from="1554116039927" duration="6211000" />
+      <workItem from="1554165707454" duration="7783000" />
+      <workItem from="1554253048245" duration="4320000" />
+      <workItem from="1554347497831" duration="3963000" />
+      <workItem from="1554684928702" duration="14546000" />
+      <workItem from="1554726444618" duration="2038000" />
+      <workItem from="1554771581246" duration="1212000" />
+      <workItem from="1554791708569" duration="1217000" />
+      <workItem from="1554796186831" duration="22000" />
+      <workItem from="1554800902044" duration="1840000" />
+      <workItem from="1554857053034" duration="22692000" />
+      <workItem from="1554944302895" duration="2119000" />
+      <workItem from="1555030687055" duration="1670000" />
+      <workItem from="1555062033493" duration="353000" />
+      <workItem from="1555289487839" duration="81000" />
+      <workItem from="1555377969790" duration="6564000" />
+      <workItem from="1555385007721" duration="86000" />
+      <workItem from="1555549297918" duration="2396000" />
+      <workItem from="1555642460596" duration="6167000" />
+      <workItem from="1556019608798" duration="737000" />
+      <workItem from="1556066840947" duration="593000" />
+      <workItem from="1556504594520" duration="18184000" />
+      <workItem from="1556585029616" duration="13268000" />
+      <workItem from="1557020105489" duration="19000" />
+      <workItem from="1557021299659" duration="6354000" />
+      <workItem from="1557103336016" duration="19855000" />
+      <workItem from="1557189712894" duration="2371000" />
+      <workItem from="1557729588018" duration="3951000" />
+      <workItem from="1557794365595" duration="274000" />
+      <workItem from="1557835334974" duration="1900000" />
+      <workItem from="1557889893654" duration="11848000" />
+      <workItem from="1557975242492" duration="4025000" />
+      <workItem from="1558085181123" duration="264000" />
+      <workItem from="1558401538668" duration="3792000" />
+      <workItem from="1558485646971" duration="1216000" />
+      <workItem from="1558518344395" duration="596000" />
+      <workItem from="1558578800297" duration="3069000" />
+      <workItem from="1558602910467" duration="6843000" />
+      <workItem from="1558658643751" duration="2803000" />
+      <workItem from="1558933534101" duration="1168000" />
+      <workItem from="1559006588167" duration="612000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="327956000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4979253" visible="true" weight="0.3116046" />
+      <window_info id="Structure" order="1" sideWeight="0.5020747" side_tool="true" weight="0.3116046" />
+      <window_info id="Designer" order="2" />
+      <window_info id="Image Layers" order="3" />
+      <window_info id="Capture Tool" order="4" />
+      <window_info id="UI Designer" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32916668" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.497851" weight="0.45416668" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49946696" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="SBT Console" order="6" weight="0.32916668" />
+      <window_info anchor="bottom" id="TODO" order="7" weight="0.125" />
+      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50143266" side_tool="true" weight="0.3263889" />
+      <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.49856734" weight="0.3263889" />
+      <window_info anchor="bottom" id="Database Changes" order="12" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="13" visible="true" weight="0.32962447" />
+      <window_info anchor="bottom" id="Java Enterprise" order="14" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Maven" order="3" />
+      <window_info anchor="right" id="Palette" order="4" />
+      <window_info anchor="right" id="Capture Analysis" order="5" />
+      <window_info anchor="right" id="Database" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Theme Preview" order="8" />
+      <window_info anchor="right" id="Coverage" order="9" side_tool="true" weight="0.3295129" />
+      <window_info anchor="right" id="Bean Validation" order="10" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$PROJECT_DIR$/../../file/ETL/sqoop-1.4.6-cdh5.8.3.jar!/com/zeta/wxh/sqoop/hbaseRowkey/StringToMD5.class</url>
+          <line>45</line>
+          <properties />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="evaluateExpression">
+      <expression>
+        <expression-string>args</expression-string>
+        <language-id>Scala</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main/scala/webreport/tools/oracleConf.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" column="7" selection-start-line="4" selection-start-column="7" selection-end-line="4" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/web/repo/org/apache/spark/spark-core_2.10/1.6.0/spark-core_2.10-1.6.0.jar!/org/apache/spark/rdd/PairRDDFunctions.class">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/scala/webreport/wordcount.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/webreport/JdbcRddTest.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="21" column="25" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/web/repo/org/apache/spark/spark-core_2.10/1.6.0/spark-core_2.10-1.6.0.jar!/org/apache/spark/SparkContext.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="155">
+          <caret line="86" column="25" selection-start-line="86" selection-start-column="25" selection-end-line="86" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/resources/data2.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="1" column="10" selection-start-line="1" selection-start-column="10" selection-end-line="1" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/web/repo/org/apache/spark/spark-core_2.10/1.6.0/spark-core_2.10-1.6.0.jar!/org/apache/spark/rdd/RDD.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="155">
+          <caret line="80" column="6" selection-start-line="80" selection-start-column="6" selection-end-line="80" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/web/repo/org/apache/spark/spark-core_2.10/1.6.0/spark-core_2.10-1.6.0.jar!/org/apache/spark/SparkConf.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" column="90" selection-start-line="4" selection-start-column="82" selection-end-line="4" selection-end-column="90" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/web/repo/org/apache/spark/spark-core_2.10/1.6.0/spark-core_2.10-1.6.0-sources.jar!/org/apache/spark/SparkConf.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1767">
+          <caret line="41" column="2" selection-start-line="41" selection-start-column="2" selection-end-line="41" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://H:/Download/TraceData5Caculate_V3.jar!/produce/TraceData5Caculate_V3.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="5" column="171" selection-start-line="5" selection-start-column="163" selection-end-line="5" selection-end-column="171" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://H:/Download/TraceData5Caculate_V3.jar!/produce/TraceData5Caculate_V2.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="1" column="7" selection-start-line="1" selection-start-column="7" selection-end-line="1" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://H:/Download/TraceData5Caculate_V3.jar!/produce/TraceData5Caculate.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="3" column="77" selection-start-line="3" selection-start-column="77" selection-end-line="3" selection-end-column="77" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/web/repo/org/apache/spark/spark-hive_2.10/1.6.0/spark-hive_2.10-1.6.0.jar!/org/apache/spark/sql/hive/HiveContext.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" column="36" selection-start-line="2" selection-start-column="36" selection-end-line="2" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/target/classes/data2.txt" />
+    <entry file="file://$PROJECT_DIR$/target/classes/data.txt" />
+    <entry file="file://$PROJECT_DIR$/src/main/scala/resources/data.csv">
+      <provider selected="true" editor-type-id="csv-text-editor">
+        <state relative-caret-position="19">
+          <caret line="1" column="15" selection-start-line="1" selection-start-column="15" selection-end-line="1" selection-end-column="15" />
+        </state>
+      </provider>
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/resources/spam.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/resources/normal.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/resources/data.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="3" column="42" selection-start-line="3" selection-start-column="42" selection-end-line="3" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/resources/data.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" column="27" selection-start-line="2" selection-start-column="27" selection-end-line="2" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/webreport/resource/data.txt" />
+    <entry file="file://$PROJECT_DIR$/src/test/scala/webreport/Person.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="13" column="23" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="23" />
+          <folding>
+            <element signature="e#288#289#0" expanded="true" />
+            <element signature="e#319#320#0" expanded="true" />
+            <element signature="e#345#346#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/scala/webreport/Test.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="6" column="32" selection-start-line="6" selection-start-column="32" selection-end-line="6" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/webreport/HelloWorld.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="18" column="1" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
+          <folding>
+            <element signature="e#19#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/scala/webreport/MlibTest.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="632">
+          <caret line="39" column="20" selection-start-line="39" selection-start-column="20" selection-end-line="39" selection-end-column="20" />
+          <folding>
+            <element signature="e#19#83#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/scala/webreport/ScalaTest.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="385">
+          <caret line="91" column="3" selection-start-line="91" selection-start-column="3" selection-end-line="91" selection-end-column="3" />
+          <folding>
+            <element signature="e#78#94#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/web/repo/org/apache/spark/spark-streaming-kafka-0-10_2.11/2.2.0/spark-streaming-kafka-0-10_2.11-2.2.0.jar!/org/apache/spark/streaming/kafka010/ConsumerStrategies.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/web/repo/org/apache/spark/spark-streaming-kafka-0-10_2.11/2.2.0/spark-streaming-kafka-0-10_2.11-2.2.0.jar!/org/apache/spark/streaming/kafka010/LocationStrategies.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/webreport/MyRegistrato.java" />
+    <entry file="jar://C:/web/repo/org/apache/spark/spark-streaming-kafka-0-10_2.11/2.2.0/spark-streaming-kafka-0-10_2.11-2.2.0.jar!/org/apache/spark/streaming/kafka010/KafkaUtils.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../../file/kafka-clients-0.10.0.1.jar!/org/apache/kafka/clients/producer/Partitioner.class" />
+    <entry file="jar://$PROJECT_DIR$/../../file/kafka-clients-0.10.0.1.jar!/org/apache/kafka/clients/producer/internals/DefaultPartitioner.class" />
+    <entry file="jar://C:/web/repo/org/apache/spark/spark-streaming-kafka-0-10_2.11/2.2.0/spark-streaming-kafka-0-10_2.11-2.2.0-sources.jar!/org/apache/spark/streaming/kafka010/KafkaUtils.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="223">
+          <caret line="117" column="31" lean-forward="true" selection-start-line="117" selection-start-column="31" selection-end-line="117" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.ideaLibSources/kafka-clients-0.10.0.1-sources.jar!/org/apache/kafka/common/utils/Utils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="474">
+          <caret line="338" column="7" selection-start-line="338" selection-start-column="7" selection-end-line="338" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/webreport/MyRegistrator.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="15" column="35" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="35" />
+          <folding>
+            <element signature="e#79#134#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.ideaLibSources/kafka-clients-0.10.0.1-sources.jar!/org/apache/kafka/clients/producer/internals/DefaultPartitioner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="632">
+          <caret line="67" column="19" selection-start-line="67" selection-start-column="19" selection-end-line="67" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources.properties" />
+    <entry file="file://$PROJECT_DIR$/src/test/scala/webreport/Spark1Test.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2223">
+          <caret line="126" column="4" selection-start-line="126" selection-start-column="4" selection-end-line="126" selection-end-column="4" />
+          <folding>
+            <element signature="e#19#46#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/hive-site.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="9" column="53" selection-start-line="9" selection-start-column="53" selection-end-line="9" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/hdfs-site.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="632">
+          <caret line="37" column="68" selection-start-line="37" selection-start-column="68" selection-end-line="37" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/scala/webreport/Spark2Oracle.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="21" column="53" selection-start-line="21" selection-start-column="53" selection-end-line="21" selection-end-column="53" />
+          <folding>
+            <element signature="e#19#46#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/webreport/SparkSqlTest.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="16" column="37" selection-start-line="16" selection-start-column="37" selection-end-line="16" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="632">
+          <caret line="58" column="57" selection-start-line="58" selection-start-column="57" selection-end-line="58" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../../file/ETL/sqoop-1.4.6-cdh5.8.3.jar!/com/zeta/wxh/sqoop/hbaseRowkey/RowkeyAddMD5.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="42" column="64" selection-start-line="42" selection-start-column="64" selection-end-line="42" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/web/repo/commons-codec/commons-codec/1.10/commons-codec-1.10-sources.jar!/org/apache/commons/codec/binary/StringUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="151">
+          <caret line="233" column="25" selection-start-line="233" selection-start-column="25" selection-end-line="233" selection-end-column="25" />
+          <folding>
+            <element signature="e#10444#10445#0" expanded="true" />
+            <element signature="e#10499#10500#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/web/repo/commons-codec/commons-codec/1.10/commons-codec-1.10-sources.jar!/org/apache/commons/codec/binary/Hex.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="235">
+          <caret line="129" column="116" lean-forward="true" selection-start-line="129" selection-start-column="116" selection-end-line="129" selection-end-column="116" />
+          <folding>
+            <element signature="e#3882#3883#0" expanded="true" />
+            <element signature="e#3926#3927#0" expanded="true" />
+            <element signature="e#6001#6002#0" expanded="true" />
+            <element signature="e#6051#6052#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/web/repo/commons-codec/commons-codec/1.10/commons-codec-1.10-sources.jar!/org/apache/commons/codec/digest/DigestUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="320" column="26" selection-start-line="320" selection-start-column="19" selection-end-line="320" selection-end-column="34" />
+          <folding>
+            <element signature="e#8611#8612#0" expanded="true" />
+            <element signature="e#8661#8662#0" expanded="true" />
+            <element signature="e#9388#9389#0" expanded="true" />
+            <element signature="e#9446#9447#0" expanded="true" />
+            <element signature="e#10441#10442#0" expanded="true" />
+            <element signature="e#10494#10495#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../../file/ETL/sqoop-1.4.6-cdh5.8.3.jar!/com/zeta/wxh/sqoop/hbaseRowkey/StringToMD5.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="35" column="31" selection-start-line="35" selection-start-column="31" selection-end-line="35" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/scala/webreport/JavaTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="366">
+          <caret line="33" column="61" lean-forward="true" selection-start-line="33" selection-start-column="61" selection-end-line="33" selection-end-column="61" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/webreport/HiveTest.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="18" column="41" lean-forward="true" selection-start-line="18" selection-start-column="41" selection-end-line="18" selection-end-column="41" />
+          <folding>
+            <element signature="e#621#645#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/webreport/Kafka2Hive.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="404">
+          <caret line="39" column="42" lean-forward="true" selection-start-line="39" selection-start-column="42" selection-end-line="39" selection-end-column="42" />
+          <folding>
+            <element signature="e#21#66#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <last-edited>webreport:jar</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.5" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>scala-sdk-2.11.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>webreport</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>mysql-connector-java-5.1.7-bin</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
