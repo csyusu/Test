@@ -24,19 +24,24 @@ public class JavaTest {
             System.out.println("交换后\na:" +a.getId());
         }
         private void mapTest(){
-            Map<String,Integer> map = new HashMap<String, Integer>();
+            Map<String,Integer> map = new HashMap<String, Integer>(2);
             map.put("a",1);
             map.put("a",map.get("a")+1);
-            System.out.println(map);
+            map.put("b",2);
+            map.put("abd",4);
+            for(Map.Entry entry:map.entrySet()){
+                System.out.println(entry.hashCode());
+
+            }
         }
         private void md5Test(){
             String encryKey="+- ~!?";
             System.out.println(DigestUtils.md5Hex(encryKey));
             System.out.println(DigestUtils.md5(encryKey));
         }
+
         public static void main(String[] args) {
             JavaTest javaTest = new JavaTest();
-            javaTest.md5Test();
 
         }
 

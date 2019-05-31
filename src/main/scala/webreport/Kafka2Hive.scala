@@ -34,7 +34,7 @@ object Kafka2Hive {
       "auto.offset.reset"->"earliest",
       "enable.auto.commit"->(false:java.lang.Boolean)
     )
-    val topics = Array("dwr_pnl",)
+    val topics = Array("dwr_pnl")
     //指定offset值
     val fromOffSet:Map[TopicPartition,Long] = Map(new TopicPartition("dwr_pnl",0)->20L,
       new TopicPartition("dwr_pnl",1)->0L)
