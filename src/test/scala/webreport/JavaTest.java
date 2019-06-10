@@ -5,6 +5,7 @@ package webreport;/*
 
 
 import org.apache.commons.codec.digest.DigestUtils;
+import scala.Array;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -16,14 +17,14 @@ public class JavaTest {
             a=b;
         }
         //java除8种基本数据类型外，对象变量都是存储的内存地址
-        private void variableTest(){
+        public void variableTest(){
             Person a = new Person(23, "a");
             Person b = new Person(22, "b");
             System.out.println("交换前\na:" + a.getId());
             swap(a, b);
             System.out.println("交换后\na:" +a.getId());
         }
-        private void mapTest(){
+        public void mapTest(){
             Map<String,Integer> map = new HashMap<String, Integer>(2);
             map.put("a",1);
             map.put("a",map.get("a")+1);
@@ -34,15 +35,21 @@ public class JavaTest {
 
             }
         }
-        private void md5Test(){
+        public void md5Test(){
             String encryKey="+- ~!?";
             System.out.println(DigestUtils.md5Hex(encryKey));
             System.out.println(DigestUtils.md5(encryKey));
         }
+        public void extendsTest(){
+            JavaParent parent = new JavaParent("P",20);
+            JavaChild child = new JavaChild("C",20);
+            JavaParent[] parents = new JavaParent[10];
+            parents[0] = child;
+            System.out.println(parents[0].getName());
+        }
 
         public static void main(String[] args) {
             JavaTest javaTest = new JavaTest();
-
         }
 
 

@@ -40,6 +40,7 @@ object Kafka2Hive {
       new TopicPartition("dwr_pnl",1)->0L)
     //val messages = KafkaUtils.createDirectStream[String,String](ssc,PreferConsistent,Subscribe[String,String](topics,kafkaParams,fromOffSet))
     val messages = KafkaUtils.createDirectStream[String,String](ssc,PreferConsistent,Subscribe[String,String](topics,kafkaParams))
+    //foreachRDD运行在driver端，类似jdbc等需序列化的对象，无法从driver传输到executor，因此jdbc连接应使用懒加载连接池在foreachPartition或partition中建立连接
     messages.foreachRDD{record=>
       if(record.count()>0) {
         val sparkSession = SparkSession.builder.config(record.sparkContext.getConf).enableHiveSupport().getOrCreate()
