@@ -49,7 +49,7 @@ object HbaseTest {
     val columnFactory = "FACTORY"
     val column = s"$family:$columnLot $family:$columnFactory"
     val startRowKey = "000|B9|9AAA930439"
-    val endRowKey = "000|B9|9AAB870789"
+    val endRowKey = "fff|B9|VFQUD20600B002"
     val conf = HBaseConfiguration.create()
     conf.set("hbase.zookeeper.property.clientPort", "2181")
     //conf.set("spark.executor.memory", "3000m")
@@ -179,7 +179,13 @@ object HbaseTest {
 //  }
 
   def main(args: Array[String]): Unit = {
-    hadoopRddWriteTest
-
+    val spark = SparkSession.builder().master("local[*]").appName(s"${this.getClass.getSimpleName}").getOrCreate()
+    val sc = spark.sparkContext
+    val conf = hBaseConf()
+    val hBaseRdd: RDD[(ImmutableBytesWritable, Result)] = sc.newAPIHadoopRDD(conf, classOf[TableInputFormat],
+      classOf[ImmutableBytesWritable],
+      classOf[Result])
+    println(hBaseRdd.count())
+    spark.close()
   }
 }

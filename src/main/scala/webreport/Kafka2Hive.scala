@@ -22,7 +22,7 @@ object Kafka2Hive {
     sparkConf.set("spark.serializer","org.apache.spark.serializer.KryoSerializer")
     //val sparkSession = SparkSession.builder.config(sparkConf).enableHiveSupport().getOrCreate()
     //sparkConf.set("spark.kryo.registrator","com.lm.kryo.MyRegistrator")
-    val ssc = new StreamingContext(sparkConf,Seconds(30))
+    val ssc = new StreamingContext(sparkConf,Seconds(60))
     ssc.checkpoint("/tmp/checkpoint")
     val brokers = """10.79.2.62:9092,10.79.2.63:9092,10.79.2.64:9092"""
     //latest earliest
@@ -43,16 +43,20 @@ object Kafka2Hive {
     //foreachRDD运行在driver端，类似jdbc等需序列化的对象，无法从driver传输到executor，因此jdbc连接应使用懒加载连接池在foreachPartition或partition中建立连接
     messages.foreachRDD{record=>
       if(record.count()>0) {
+        record.asInstanceOf[HasOffsetRanges].offsetRanges.foreach(println)
+        println(record.map(_.key().toString))
         val sparkSession = SparkSession.builder.config(record.sparkContext.getConf).enableHiveSupport().getOrCreate()
         import sparkSession.sql
         //使用toDF需要import隐式转换
         import sparkSession.implicits._
         // val df = record.map(_.value()).toDF()
         val df = sparkSession.read.json(record.map(_.value()))
-        df.createOrReplaceTempView("value")
-        sql("""select after.* from value""").createOrReplaceTempView("after")
-        val dwrPnl=sql("""select  SITE,factory,pnl_id from after""").persist()
-        print(dwrPnl.queryExecution)
+        sql("show databases").show()
+        //df.show()
+//        df.createOrReplaceTempView("value")
+//        sql("""select after.* from value""").createOrReplaceTempView("after")
+//        val dwrPnl=sql("""select  SITE,factory,pnl_id from after""").persist()
+//        dwrPnl.show()
 //        sql("use mdw")
 //        sql("set hive.exec.dynamic.partition.mode=nonstrict").
 //        dwrPnl.write.mode("append").format("hive").partitionBy("factory","pnl_id").saveAsTable("test1")

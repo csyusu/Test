@@ -5,10 +5,13 @@ package webreport;/*
 
 
 import org.apache.commons.codec.digest.DigestUtils;
+import org.codehaus.janino.Java;
 import scala.Array;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 public class JavaTest {
         //调用swap时，会生成局部变量 a b ，因为a b 存储的是对象的地址，因此调用.setId更改了局部变量a指向地址的内容，a =b 修改了局部变量a的内容
@@ -44,8 +47,11 @@ public class JavaTest {
             JavaParent parent = new JavaParent("P",20);
             JavaChild child = new JavaChild("C",20);
             JavaParent[] parents = new JavaParent[10];
+            //父类的引用可以指向子类对象，子类引用不能指向父类对象。
             parents[0] = child;
             System.out.println(parents[0].getName());
+            System.out.println("Parent:"+parent.getClass());
+            System.out.println("Child"+child.getClass());
         }
 
         public static void main(String[] args) {

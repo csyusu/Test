@@ -3,6 +3,7 @@ package webreport
 import java.util
 import java.util.Properties
 
+import org.apache.spark.sql.expressions.Window
 import org.apache.spark.sql.{DataFrame, SQLContext, SparkSession}
 import org.apache.spark.{SparkConf, SparkContext}
 
@@ -44,7 +45,6 @@ object SparkSqlTest {
     val url = "jdbc:oracle:thin:@//10.79.0.26:1521/mdwymsdb"
     spark.read.jdbc(url,tableName,connection)
   }
-  @Override
   def oracleJdbc(spark:SparkSession,tableName:String,columnName:String,lower:Long,upper:Long,partitions:Int): DataFrame ={
     val connection = new Properties()
     connection.put("user","MDWADM")
@@ -52,7 +52,6 @@ object SparkSqlTest {
     val url = "jdbc:oracle:thin:@//10.79.0.26:1521/mdwymsdb"
     spark.read.jdbc(url,tableName,columnName,lower,upper,partitions,connection)
   }
-  @Override
   def oracleJdbc(spark:SparkSession,tableName:String,predicates:Array[String]): DataFrame ={
     val connection = new Properties()
     connection.put("user","MDWADM")
@@ -96,6 +95,8 @@ object SparkSqlTest {
     person1.foreachPartition(partition =>{println("partition3: ");partition.foreach(print)})
     import spark._
     println(sql("select firstName,sum(seq) over (partition by firstName order by seq) as qty  from pnl").queryExecution)
+    val window =  Window.partitionBy(person("firstName")).orderBy(person("seq"))
+
 //    val person2 = person.repartition(2,person("firstName"))
 //    println(person2.rdd.partitions.size)
 //    person2.foreachPartition(partition =>{println("partition2: ");partition.foreach(print)})

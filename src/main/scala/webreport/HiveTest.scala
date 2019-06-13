@@ -30,8 +30,9 @@ object HiveTest {
       sql("show databases").show
       sql("use mdw")
       sql("set hive.exec.dynamic.partition.mode=nonstrict")
-      val glsHist = sql("select * from mdw.dwr_gls_hist limit 1")
-      val brodcast = spark.sparkContext.broadcast()
+      val lot = sql("select LOT_ID,FACTORY from mdw.hb_dwr_lot where rowkey>='000|B9|9AAA930439' and rowkey<'fff|B9|VFQUD20600B002'")
+      //val brodcast = spark.sparkContext.broadcast(glsHist)
+      println(lot.count())
       //Thread.sleep(150 * 1000)
       spark.stop()
     }
