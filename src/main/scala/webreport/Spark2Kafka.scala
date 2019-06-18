@@ -8,6 +8,9 @@ import org.apache.spark.broadcast.Broadcast
 import org.apache.spark.sql.SparkSession
 import webreport.tools.{KafkaSink, OracleJdbc}
 
+import scala.util.parsing.json.JSONObject
+
+
 /*
     @author    YuSu
     @createTime    2019-06-13
@@ -28,11 +31,11 @@ object Spark2Kafka {
       println("kafkaProducer init done")
       spark.sparkContext.broadcast(KafkaSink[String,String](kafkaProducerConfig))
     }
-    val tableName="(select * from dwr_pnl where rownum<10) a"
+    val tableName="(select * from dwr_pnl_hist where shift_timekey='20190617 060000') a"
     val pnl = OracleJdbc(spark,tableName)
     try{
       pnl.foreach(record=>{
-        kafkaProducer.value.send(topic,"dwr_pnl",record.getValuesMap( Seq("PNL_ID","FACTORY")).toString())
+        kafkaProducer.value.send(topic,"dwr_pnl",JSONObject(record.getValuesMap( Seq("PNL_ID","FACTORY","SITE"))).toString())
         println(record.getValuesMap( Seq("PNL_ID","FACTORY"))+" kafka succeed")
       })
     }

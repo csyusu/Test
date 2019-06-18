@@ -6,10 +6,14 @@ package webreport
    */
 import java.lang
 
+
+import jdk.nashorn.internal.parser.JSONParser
+
 import scala.annotation.tailrec
 import scala.concurrent.Future
 import scala.concurrent.ExecutionContext.Implicits.global
 import scala.util.matching.Regex
+import scala.util.parsing.json.JSONObject
 
 object ScalaTest {
 
@@ -91,21 +95,23 @@ object ScalaTest {
     t
   }
 
-  def main(args: Array[String]): Unit = {
-    val predicates =
-      Array(
-        "2015-09-16" -> "2015-09-30",
-        "2015-10-01" -> "2015-10-15",
-        "2015-10-16" -> "2015-10-31",
-        "2015-11-01" -> "2015-11-14",
-        "2015-11-15" -> "2015-11-30",
-        "2015-12-01" -> "2015-12-15"
-      ).map {
-        case (start, end) =>
-          s"cast(modified_time as date) >= date '$start' " + s"AND cast(modified_time as date) <= date '$end'"
-      }
-    predicates.foreach(print)
+  def map2Json(): Unit ={
+    val map = Map("a"->1,"b"->2)
+    //方式一
+    import scala.util.parsing.json.JSONObject
+    val json2= JSONObject(map).toString()
+    println(json2)
+    //方式二
+    import com.fasterxml.jackson.databind.ObjectMapper
+    import com.fasterxml.jackson.module.scala.DefaultScalaModule
+    val mapper = new ObjectMapper()
+    mapper.registerModule(DefaultScalaModule)
+    val json1 = mapper.writeValueAsString(map)
+    println(json1)
 
+  }
+  def main(args: Array[String]): Unit = {
+    map2Json
   }
 }
 
