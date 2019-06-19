@@ -13,7 +13,9 @@ object ArrayRepYield {
     val spark = SparkSession.builder().appName("ArrayRepYield")
       //.master("local[*]")
       .config("spark.debug.maxToStringFields",10000)
+      .config("spark.sql.shuffle.partitions",1000)
       .getOrCreate()
+    
     import spark.sql
     val repYield = sql("""select g.glass_id,p.pnl_id,d.br_defect
                           |from yms.dwr_eda_ar_rep_gls g
@@ -26,7 +28,7 @@ object ArrayRepYield {
                           |and g.end_time<'20190618_060000'
                           |and g.date_part>='20190617'
                           |""".stripMargin)
-      repYield.repartition(2000,repYield("GLASS_ID")).createOrReplaceTempView("repYield")
+      repYield.createOrReplaceTempView("repYield")
     val gls = sql(
       """
         |select gls_id,unit_id,shift_timekey
@@ -115,7 +117,7 @@ object ArrayRepYield {
         |     AND OPER_CODE IN
         |         ('4320-00', '4340-00', '5320-00', '5340-00', '8320-00')
       """.stripMargin)
-      gls.repartition(2000,gls("GLS_ID")).createOrReplaceTempView("gls")
+      gls.createOrReplaceTempView("gls")
     val result = sql(
       """
         |select g.unit_id,d.br_defect,

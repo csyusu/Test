@@ -43,6 +43,9 @@ public class JavaTest {
             System.out.println(DigestUtils.md5Hex(encryKey));
             System.out.println(DigestUtils.md5(encryKey));
         }
+        /*
+        父类引用指向了子类对象，叫做协变+T
+         */
         public void extendsTest(){
             JavaParent parent = new JavaParent("P",20);
             JavaChild child = new JavaChild("C",20);
@@ -53,9 +56,21 @@ public class JavaTest {
             System.out.println("Parent:"+parent.getClass());
             System.out.println("Child"+child.getClass());
         }
-
+        /*
+        根据IEEE标准，float0.3实际存储略大于0.3
+         */
+        public void floatTest(){
+            float a = 0.3f;
+            //float :0.30000001192092896000
+            System.out.printf("float :%.20f\n",a);
+            //double :0.30000000000000000000
+            System.out.printf("double :%.20f\n",0.3);
+            //字面量0.3，默认为double类型，比较时把float类型转变为double类型，float后面补0，因此float 0.3>double 0.3
+            System.out.println("float>double:"+(a>0.3));
+    }
         public static void main(String[] args) {
             JavaTest javaTest = new JavaTest();
+            javaTest.floatTest();
         }
 
 
