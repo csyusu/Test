@@ -129,6 +129,11 @@ object ArrayRepYield {
       """.stripMargin).persist(StorageLevel.MEMORY_AND_DISK)
     result.explain()
     result.show(20)
+    result.foreachPartition(partition=>{
+      partition.foreach(row=>{
+        row.getDouble(2)
+      })
+    })
     try{
       result.write.mode("overwrite").jdbc(OracleJdbc.url,"test1",OracleJdbc.conn)
     }

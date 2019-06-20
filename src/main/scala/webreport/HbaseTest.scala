@@ -113,8 +113,7 @@ object HbaseTest {
       put.addColumn(Bytes.toBytes("CF"), Bytes.toBytes("FACTORY"), Bytes.toBytes(arr(2)))
       (new ImmutableBytesWritable, put)
     })
-    rdd.repartition(3)
-    rdd.saveAsHadoopDataset(jobConf)
+    rdd.repartition(1).saveAsHadoopDataset(jobConf)
     Thread.sleep(600000)
     spark.stop()
   }
