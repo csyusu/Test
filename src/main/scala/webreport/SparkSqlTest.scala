@@ -42,6 +42,7 @@ object SparkSqlTest {
     val connection = new Properties()
     connection.put("user","MDWADM")
     connection.put("password","mdwadm1234")
+    connection.put("driver","oracle.jdbc.driver.OracleDriver")
     val url = "jdbc:oracle:thin:@//10.79.0.26:1521/mdwymsdb"
     spark.read.jdbc(url,tableName,connection)
   }
@@ -49,6 +50,7 @@ object SparkSqlTest {
     val connection = new Properties()
     connection.put("user","MDWADM")
     connection.put("password","mdwadm1234")
+    connection.put("driver","oracle.jdbc.driver.OracleDriver")
     val url = "jdbc:oracle:thin:@//10.79.0.26:1521/mdwymsdb"
     spark.read.jdbc(url,tableName,columnName,lower,upper,partitions,connection)
   }
@@ -56,11 +58,13 @@ object SparkSqlTest {
     val connection = new Properties()
     connection.put("user","MDWADM")
     connection.put("password","mdwadm1234")
+    connection.put("driver","oracle.jdbc.driver.OracleDriver")
     val url = "jdbc:oracle:thin:@//10.79.0.26:1521/mdwymsdb"
     spark.read.jdbc(url,tableName,predicates,connection)
   }
   def spark2Test: Unit ={
-    val spark = SparkSession.builder().appName("sparkSqlTest").master("local[*]")
+    val spark = SparkSession.builder().appName("sparkSqlTest").enableHiveSupport()
+      //.master("local[*]")
       //设置并行度 默认200，但jdbc不指定partition，只会有一个task读数据库
       .config("spark.sql.shuffle.partitions",100)
       //开启hash join，不倾向于sort merge
@@ -68,6 +72,8 @@ object SparkSqlTest {
       //默认少于10485760（10M）的join表会进行自动广播，使用broadcast join
       //.config("spark.sql.autoBroadcastJoinThreshold ",100000000)
       .getOrCreate()
+    spark.read.textFile("data.json")
+
     val dwrPnl1 = "(select * from (select a.event_timekey,a.pnl_id,rownum as no from dwr_pnl_hist a where a.shift_timekey='20190530 060000') b) c"
     val columnName = "no"
     //总记录数1100，第十个分区200条记录
@@ -75,13 +81,17 @@ object SparkSqlTest {
     println(pnl1.rdd.partitions.size)
     pnl1.foreachPartition(partitionRecord=>println(partitionRecord.length))
     //predicate方式支持string，date等类型
-    val dwrPnl2 = "(select event_timekey,pnl_id from dwr_pnl_hist where shift_timekey='20190530 180000') a"
+    val dwrPnl2 = "(select event_timekey,pnl_id,factory,'null' as newcolumn from dwr_pnl_hist where shift_timekey='20190530 180000') a"
     val predicates = Array("event_timekey >'20190530180000' and event_timekey <='20190530181000'"
       ,"event_timekey >'20190530181000' and event_timekey <='20190530182000'")
     val pnl2 = oracleJdbc(spark,dwrPnl2,predicates)
     val pnl2partitions = pnl2.rdd.partitions.size
     println(s"pnl2:$pnl2partitions")
     pnl2.foreachPartition(partitionRecord=>{partitionRecord.foreach(print)})
+    spark.sql("use mdw")
+    spark.sql("set hive.exec.dynamic.partition.mode=nonstrict")
+    spark.sql("""set hive.enforce.bucketing=true""")
+    pnl2.write.mode("append").format("hive").partitionBy("factory").saveAsTable("test")
     //pnl1.join(pnl2,pnl1("pnl_id")===pnl2("pnl_id"),"left").show(10)
   }
   def partitionTest(): Unit ={
@@ -107,8 +117,18 @@ object SparkSqlTest {
   }
   def main(args: Array[String]): Unit = {
 
-    //spark2Test
-    partitionTest()
-    //Thread.sleep(10000000)
+    val spark = SparkSession.builder().appName("sparkSqlTest").enableHiveSupport()
+      .master("local[*]")
+      //设置并行度 默认200，但jdbc不指定partition，只会有一个task读数据库
+      .config("spark.sql.shuffle.partitions",100)
+      //开启hash join，不倾向于sort merge
+      .config("spark.sql.join.preferSortMergeJoin","false")
+      //默认少于10485760（10M）的join表会进行自动广播，使用broadcast join
+      //.config("spark.sql.autoBroadcastJoinThreshold ",100000000)
+      .getOrCreate()
+    spark.read.textFile("H:\\BDP\\scala\\webreport\\src\\main\\resources\\data.json").show()
+
+
+    Thread.sleep(10000000)
   }
 }

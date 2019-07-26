@@ -1,11 +1,11 @@
 package webreport.tools
 
-import java.sql.DriverManager
+
 import java.util.Properties
 
 import org.apache.spark.sql.{DataFrame, SparkSession}
 
-object OracleJdbc {
+object GetOracleDataframe {
   final val url = "jdbc:oracle:thin:@//10.79.0.26:1521/mdwymsdb"
   final val conn = new Properties()
   conn.put("user","MDWADM")

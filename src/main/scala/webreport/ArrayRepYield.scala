@@ -2,7 +2,7 @@ package webreport
 
 import org.apache.spark.sql.SparkSession
 import org.apache.spark.storage.StorageLevel
-import webreport.tools.OracleJdbc
+import webreport.tools.GetOracleDataframe
 
 /*
     @author    YuSu
@@ -13,7 +13,7 @@ object ArrayRepYield {
     val spark = SparkSession.builder().appName("ArrayRepYield")
       //.master("local[*]")
       .config("spark.debug.maxToStringFields",10000)
-      .config("spark.sql.shuffle.partitions",1000)
+      .config("spark.sql.shuffle.partitions",300)
       .getOrCreate()
     
     import spark.sql
@@ -129,13 +129,8 @@ object ArrayRepYield {
       """.stripMargin).persist(StorageLevel.MEMORY_AND_DISK)
     result.explain()
     result.show(20)
-    result.foreachPartition(partition=>{
-      partition.foreach(row=>{
-        row.getDouble(2)
-      })
-    })
     try{
-      result.write.mode("overwrite").jdbc(OracleJdbc.url,"test1",OracleJdbc.conn)
+      result.write.mode("overwrite").jdbc(GetOracleDataframe.url,"test1",GetOracleDataframe.conn)
     }
     catch{
       case e:Exception => println(e)

@@ -111,7 +111,7 @@ object ScalaTest {
 
   }
   def main(args: Array[String]): Unit = {
-    map2Json
+    println(math.max(2,3))
   }
 }
 
