@@ -16,6 +16,7 @@ import scala.util.parsing.json.JSONObject
     @createTime    2019-06-13
    */
 object KafkaProducer {
+  /**
   def main(args: Array[String]): Unit = {
     val spark = SparkSession.builder().master("local[*]").appName("Spark2Kafka").getOrCreate()
     val brokers = """10.79.2.62:9092,10.79.2.63:9092,10.79.2.64:9092"""
@@ -51,5 +52,5 @@ object KafkaProducer {
       spark.close()
     }
   }
-
+*/
 }

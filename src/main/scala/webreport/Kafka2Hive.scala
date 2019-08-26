@@ -18,6 +18,8 @@ import org.apache.spark.streaming.kafka010.ConsumerStrategies.Subscribe
 object Kafka2Hive {
 
   def main(args: Array[String]): Unit = {
+    /**
+
     val sparkConf = new SparkConf().setMaster("local[*]").setAppName("Kafka2Hive")
     sparkConf.set("spark.serializer","org.apache.spark.serializer.KryoSerializer")
     sparkConf.set("spark.streaming.backpressure.enabled","true")
@@ -46,7 +48,7 @@ object Kafka2Hive {
     //foreachRDD运行在driver端，类似jdbc等需序列化的对象，无法从driver传输到executor，因此jdbc连接应使用懒加载连接池在foreachPartition或partition中建立连接
 //    val sparkSession = SparkSession.builder.config(ssc.sparkContext.getConf).enableHiveSupport().getOrCreate()
     messages.foreachRDD(rdd=>{
-      val rdd2 = rdd.filter(recoprd=>{recoprd.topic().equals("dwr_pnl")})
+      val rdd2 = rdd.filter(record=>{record.topic().equals("dwr_pnl")})
 
     })
     messages.foreachRDD{record=>
@@ -80,5 +82,7 @@ object Kafka2Hive {
     println("succeed")
     pnl.write.mode("append").format("hive").partitionBy("factory").saveAsTable("test")
 
+      *
+      */
   }
 }
