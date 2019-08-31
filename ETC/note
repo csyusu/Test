@@ -3,3 +3,5 @@ netcat:
 D:\softwares\netcat-1.11>nc -L -p 9000 -v
 
 运行start-cluster.bat之后产生jobManager和taskManager两个Java窗口
+//git 设置代理
+git config --global https.proxy devproxy.h3c.com:8080

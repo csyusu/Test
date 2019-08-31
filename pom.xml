@@ -11,7 +11,12 @@
      <scala.binary.version>2.11</scala.binary.version>
       <flink.version>1.6.0</flink.version>
   </properties>
-
+    <!--scope 的作用范围：-->
+    <!--（1）compile：默认值，适用于所有阶段（表明该 jar 包在编译、运行以及测试中路径均可见），并且会随着项目一起发布。-->
+    <!--（2）test：只在测试时使用，用于编译和运行测试代码，不会随项目发布。-->
+    <!--（3）runtime：无需参与项目的编译，不过后期的测试和运行周期需要其参与，与 compile 相比，跳过了编译。如 JDBC 驱动，适用运行和测试阶段。-->
+    <!--（4）provided：编译和测试时有效，但是该依赖在运行时由服务器提供，并且打包时也不会被包含进去。如 servlet-api。-->
+    <!--（5）system：类似 provided，需要显式提供包含依赖的jar，不会从 maven 仓库下载，而是从本地文件系统获取，需要添加 systemPath 的属性来定义路径。-->
   <repositories>
     <repository>
       <id>scala-tools.org</id>
@@ -29,6 +34,40 @@
   </pluginRepositories>
 
   <dependencies>
+    <dependency>
+      <groupId>org.apache.flink</groupId>
+      <artifactId>flink-scala_${scala.binary.version}</artifactId>
+      <version>${flink.version}</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+        <groupId>org.apache.flink</groupId>
+        <artifactId>flink-cep-scala_2.11</artifactId>
+        <version>1.6.0</version>
+    </dependency>
+      <dependency>
+          <groupId>org.scala-lang</groupId>
+          <artifactId>scala-library</artifactId>
+          <version>${scala.version}</version>
+          <scope>provided</scope>
+      </dependency>
+      <dependency>
+          <groupId>com.alibaba</groupId>
+          <artifactId>fastjson</artifactId>
+          <version>1.2.38</version>
+      </dependency>
+      <dependency>
+          <groupId>org.slf4j</groupId>
+          <artifactId>slf4j-log4j12</artifactId>
+          <version>1.7.7</version>
+          <scope>runtime</scope>
+      </dependency>
+      <dependency>
+          <groupId>log4j</groupId>
+          <artifactId>log4j</artifactId>
+          <version>1.2.17</version>
+          <scope>runtime</scope>
+      </dependency>
       <dependency>
           <groupId>org.apache.flink</groupId>
           <artifactId>flink-streaming-scala_${scala.binary.version}</artifactId>
@@ -67,56 +106,67 @@
       <groupId>org.apache.spark</groupId>
       <artifactId>spark-core_${scala_spark.version}</artifactId>
       <version>${spark.version}</version>
+        <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>org.apache.spark</groupId>
       <artifactId>spark-streaming_${scala_spark.version}</artifactId>
       <version>${spark.version}</version>
+        <scope>provided</scope>
     </dependency>
     <dependency>
        <groupId>org.apache.spark</groupId>
        <artifactId>spark-streaming-kafka-0-10_${scala_spark.version}</artifactId>
        <version>${spark.version}</version>
+        <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>org.apache.spark</groupId>
       <artifactId>spark-sql_${scala_spark.version}</artifactId>
       <version>${spark.version}</version>
+        <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>org.apache.spark</groupId>
       <artifactId>spark-hive_${scala_spark.version}</artifactId>
       <version>${spark.version}</version>
+        <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>org.apache.spark</groupId>
       <artifactId>spark-mllib_${scala_spark.version}</artifactId>
       <version>${spark.version}</version>
+        <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>org.apache.spark</groupId>
       <artifactId>spark-streaming_${scala_spark.version}</artifactId>
       <version>${spark.version}</version>
+        <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>org.apache.hadoop</groupId>
       <artifactId>hadoop-client</artifactId>
       <version>2.6.0</version>
+        <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>org.apache.hadoop</groupId>
       <artifactId>hadoop-common</artifactId>
       <version>2.6.0</version>
+        <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>org.apache.hadoop</groupId>
       <artifactId>hadoop-hdfs</artifactId>
       <version>2.6.0</version>
+        <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>org.apache.hbase</groupId>
       <artifactId>hbase-client</artifactId>
       <version>1.2.0</version>
+        <scope>provided</scope>
       <exclusions>
         <exclusion>
           <groupId>javax.servlet</groupId>
@@ -128,11 +178,13 @@
       <groupId>org.apache.hbase</groupId>
       <artifactId>hbase-common</artifactId>
       <version>1.2.0</version>
+        <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>org.apache.hbase</groupId>
       <artifactId>hbase-server</artifactId>
       <version>1.2.0</version>
+        <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>com.alibaba</groupId>
@@ -147,47 +199,116 @@
     <sourceDirectory>src/main/scala</sourceDirectory>
     <testSourceDirectory>src/test/scala</testSourceDirectory>
     <plugins>
+      <!-- Scala Compiler -->
+      <!--<plugin>-->
+        <!--<groupId>net.alchim31.maven</groupId>-->
+        <!--<artifactId>scala-maven-plugin</artifactId>-->
+        <!--<version>3.4.4</version>-->
+        <!--<executions>-->
+          <!--&lt;!&ndash; Run scala compiler in the process-resources phase, so that dependencies on-->
+              <!--scala classes can be resolved later in the (Java) compile phase &ndash;&gt;-->
+          <!--<execution>-->
+            <!--<id>scala-compile-first</id>-->
+            <!--<phase>process-resources</phase>-->
+            <!--<goals>-->
+              <!--<goal>compile</goal>-->
+            <!--</goals>-->
+          <!--</execution>-->
+
+          <!--&lt;!&ndash; Run scala compiler in the process-test-resources phase, so that dependencies on-->
+               <!--scala classes can be resolved later in the (Java) test-compile phase &ndash;&gt;-->
+          <!--<execution>-->
+            <!--<id>scala-test-compile</id>-->
+            <!--<phase>process-test-resources</phase>-->
+            <!--<goals>-->
+              <!--<goal>testCompile</goal>-->
+            <!--</goals>-->
+          <!--</execution>-->
+        <!--</executions>-->
+        <!--<configuration>-->
+          <!--<jvmArgs>-->
+            <!--<jvmArg>-Xms128m</jvmArg>-->
+            <!--<jvmArg>-Xmx512m</jvmArg>-->
+          <!--</jvmArgs>-->
+        <!--</configuration>-->
+      <!--</plugin>-->
+      <!--<plugin>-->
+        <!--<groupId>org.scala-tools</groupId>-->
+        <!--<artifactId>maven-scala-plugin</artifactId>-->
+        <!--<version>2.15.2</version>-->
+        <!--<executions>-->
+          <!--<execution>-->
+            <!--<goals>-->
+              <!--<goal>compile</goal>-->
+              <!--<goal>testCompile</goal>-->
+            <!--</goals>-->
+          <!--</execution>-->
+        <!--</executions>-->
+        <!--<configuration>-->
+          <!--<scalaVersion>${scala.version}</scalaVersion>-->
+          <!--<args>-->
+            <!--<arg>-target:jvm-1.8</arg>-->
+          <!--</args>-->
+        <!--</configuration>-->
+      <!--</plugin>-->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
-        <version>2.3.2</version>
+        <version>3.5.1</version>
         <configuration>
           <source>1.8</source>
           <target>1.8</target>
         </configuration>
       </plugin>
+      <!--指定main class-->
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-jar-plugin</artifactId>
+          <configuration>
+            <archive>
+              <manifest>
+                <mainClass>webreport.flink.WordCount</mainClass>
+              </manifest>
+            </archive>
+          </configuration>
+        </plugin>
       <plugin>
-        <groupId>org.scala-tools</groupId>
-        <artifactId>maven-scala-plugin</artifactId>
+        <artifactId>maven-assembly-plugin</artifactId>
+        <configuration>
+          <!--<finalName>ITOAStreamingAnalysis</finalName>-->
+          <descriptors>
+            <descriptor>src/main/assembly/jar-with-dependencies.xml</descriptor>
+            <descriptor>src/main/assembly/package.xml</descriptor>
+          </descriptors>
+        </configuration>
         <executions>
           <execution>
-            <goals>
-              <goal>compile</goal>
-              <goal>testCompile</goal>
-            </goals>
+            <id>make-assembly</id>
+            <phase>package</phase>
+            <!--<goals>-->
+              <!--<goal>assembly</goal>-->
+            <!--</goals>-->
           </execution>
         </executions>
-        <configuration>
-          <scalaVersion>2.10.5</scalaVersion>
-        </configuration>
       </plugin>
-<!--      <plugin>-->
-<!--        <groupId>org.apache.maven.plugins</groupId>-->
-<!--        <artifactId>maven-eclipse-plugin</artifactId>-->
-<!--        <configuration>-->
-<!--          <downloadSources>true</downloadSources>-->
-<!--          <buildcommands>-->
-<!--            <buildcommand>ch.epfl.lamp.sdt.core.scalabuilder</buildcommand>-->
-<!--          </buildcommands>-->
-<!--          <additionalProjectnatures>-->
-<!--            <projectnature>ch.epfl.lamp.sdt.core.scalanature</projectnature>-->
-<!--          </additionalProjectnatures>-->
-<!--          <classpathContainers>-->
-<!--            <classpathContainer>org.eclipse.jdt.launching.JRE_CONTAINER</classpathContainer>-->
-<!--            <classpathContainer>ch.epfl.lamp.sdt.launching.SCALA_CONTAINER</classpathContainer>-->
-<!--          </classpathContainers>-->
-<!--        </configuration>-->
-<!--      </plugin>-->
+      <!--<plugin>-->
+        <!--<artifactId>maven-antrun-plugin</artifactId>-->
+        <!--<executions>-->
+          <!--<execution>-->
+            <!--<phase>package</phase>-->
+            <!--<goals>-->
+              <!--<goal>run</goal>-->
+            <!--</goals>-->
+            <!--<configuration>-->
+              <!--<tasks>-->
+                <!--<copy file="${project.build.directory}/webreport-1.0-SNAPSHOT.jar"-->
+                      <!--tofile="../../target/${project.parent.artifactId}/task/webreport-1.0-SNAPSHOT.jar" overwrite="true" >-->
+                <!--</copy>-->
+              <!--</tasks>-->
+            <!--</configuration>-->
+          <!--</execution>-->
+        <!--</executions>-->
+      <!--</plugin>-->
     </plugins>
   </build>
   <reporting>
@@ -196,9 +317,42 @@
         <groupId>org.scala-tools</groupId>
         <artifactId>maven-scala-plugin</artifactId>
         <configuration>
-          <scalaVersion>${scala_spark.version}</scalaVersion>
+          <scalaVersion>${scala.version}</scalaVersion>
         </configuration>
       </plugin>
     </plugins>
   </reporting>
+
+  <profiles>
+    <profile>
+      <id>add-dependencies-for-IDEA</id>
+
+      <activation>
+        <property>
+          <name>idea.version</name>
+        </property>
+      </activation>
+
+      <dependencies>
+        <dependency>
+          <groupId>org.apache.flink</groupId>
+          <artifactId>flink-scala_${scala.binary.version}</artifactId>
+          <version>${flink.version}</version>
+          <scope>compile</scope>
+        </dependency>
+        <dependency>
+          <groupId>org.apache.flink</groupId>
+          <artifactId>flink-streaming-scala_${scala.binary.version}</artifactId>
+          <version>${flink.version}</version>
+          <scope>compile</scope>
+        </dependency>
+        <dependency>
+          <groupId>org.scala-lang</groupId>
+          <artifactId>scala-library</artifactId>
+          <version>${scala.version}</version>
+          <scope>compile</scope>
+        </dependency>
+      </dependencies>
+    </profile>
+  </profiles>
 </project>
