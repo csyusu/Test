@@ -102,15 +102,16 @@ object ScalaTest {
 
   }
   def main(args: Array[String]): Unit = {
-    val tuple2 = (("12.2.2.49","16.1.1.41",138L,145L,6L,33L,"10.121.45.218"),(0.0,100.0,100.0,100.0,1L,1567145687000L))
-    val list = new util.ArrayList[(Tuple7[String, String, Long, Long, Long, Long, String], Tuple6[Double, Double, Double, Double,Long, Long])]
-    list.add(tuple2)
-    val list2 = List(1,2,3,4)
-    list2.foreach(k=>{
-      print(k)
-    })
-    list.forEach(new MapFunction[((String, String, Long, Long, Long, Long, String),(Double, Double, Double, Double,Long, Long))] {
 
-    })
+    val result = for (i<- 1 to 10 ) yield{
+      if(i%2==0){
+        i
+      }
+      else{
+        "奇数"
+      }
+    }
+    result.foreach(println)
+    println(result.getClass.getName())
   }
 }

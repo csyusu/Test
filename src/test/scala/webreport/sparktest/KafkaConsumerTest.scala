@@ -15,7 +15,7 @@ import org.apache.spark.streaming.kafka010.LocationStrategies.PreferConsistent
     @author    YuSu
     @createTime    2019-08-26
    */
-object KafkaTest {
+object KafkaConsumerTest {
   def main(args: Array[String]): Unit = {
     val sparkConf = new SparkConf().setMaster("local[2]").setAppName("KafkaTest")
     sparkConf.set("spark.serializer","org.apache.spark.serializer.KryoSerializer")
@@ -42,11 +42,11 @@ object KafkaTest {
     //    val messages = KafkaUtils.createDirectStream[String,String](ssc,PreferConsistent,Subscribe[String,String](topics,kafkaParams,fromOffSet))
     val messages = KafkaUtils.createDirectStream[String,String](ssc,PreferConsistent,Subscribe[String,String](topics,kafkaParams))
     //foreachRDD运行在driver端，类似jdbc等需序列化的对象，无法从driver传输到executor，因此jdbc连接应使用懒加载连接池在foreachPartition或partition中建立连接
-    print("???")
+    println(messages)
     messages.foreachRDD{ rdd=>
-      print("进来了")
-      print(rdd.collect().length)
-      print(LocalDateTime.now())
+      println("进来了")
+      println(rdd.collect().length)
+      println(LocalDateTime.now())
       if(rdd.count()>0) {
         //获得offset值
         rdd.asInstanceOf[HasOffsetRanges].offsetRanges.foreach(println)

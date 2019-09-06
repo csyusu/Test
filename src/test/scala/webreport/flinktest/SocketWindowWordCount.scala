@@ -18,7 +18,7 @@ import org.apache.flink.streaming.api.windowing.time.Time
   * nc -l 12345
   * }}}
   * and run this example with the hostname and the port as arguments..
-  * nc -L -p 9000 -v
+  * D:\softwares\netcat-1.11>nc -L -p 9000 -v
   */
 object SocketWindowWordCount {
 
@@ -58,7 +58,11 @@ object SocketWindowWordCount {
       .timeWindow(Time.seconds(10))
       .sum("count")
     // print the results with a single thread, rather than in parallel
-    windowCounts.print().setParallelism(1)
+    windowCounts.map(item=>"10s:"+item).print().setParallelism(1)
+
+    windowCounts.keyBy(0).timeWindow(Time.seconds(60)).sum("count")
+      .map(item=>"60s:"+item)
+      .print().setParallelism(1)
 
     env.execute("Socket Window WordCount")
   }
